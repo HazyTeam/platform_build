@@ -20,7 +20,10 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
     BluetoothMidiService \
+    Camera2 \
     Gallery2 \
+    Email \
+    Exchange2 \
     MusicFX \
     OneTimeInitializer \
     Provision \
@@ -30,6 +33,7 @@ PRODUCT_PACKAGES := \
 PRODUCT_PACKAGES += \
     clatd \
     clatd.conf \
+    javax.btobex \
     pppd \
     screenrecord
 

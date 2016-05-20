@@ -19,8 +19,12 @@
 
 PRODUCT_PACKAGES := \
     CarrierConfig \
+    CellBroadcastReceiver \
     Dialer \
+    messaging \
     CallLogBackup \
+    Stk \
+    InCallUI \
     rild
 
 PRODUCT_COPY_FILES := \
