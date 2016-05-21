@@ -1151,7 +1151,6 @@ FULL_SYSTEMIMAGE_DEPS := $(INTERNAL_SYSTEMIMAGE_FILES) $(INTERNAL_USERIMAGES_DEP
 # system image.
 INSTALLED_FILES_FILE := $(PRODUCT_OUT)/installed-files.txt
 $(INSTALLED_FILES_FILE): $(FULL_SYSTEMIMAGE_DEPS)
-	$(hide) ./vendor/hazy/tools/changelog	
 	@echo Installed file list: $@
 	@mkdir -p $(dir $@)
 	@rm -f $@
@@ -1921,18 +1920,9 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(HAZY_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(HAZY_TARGET_PACKAGE) > $(HAZY_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_YLW}"═════════════════════════════════════════════════════════════════════════════════"${CL_RST}
-	@echo -e ${CL_CYN}" *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* *Hazy* "${CL_RST}
-	@echo -e ${CL_YLW}"═════════════════════════════════════════════════════════════════════════════════"${CL_RST}
-	@echo -e ${CL_BLU}"			████████╗██╗   ██╗██████╗ ██████╗  ██████╗		    "${CL_RST}
-	@echo -e ${CL_BLU}"			╚══██╔══╝██║   ██║██╔══██╗██╔══██╗██╔═══██╗		    "${CL_RST}
-	@echo -e ${CL_BLU}"		   	   ██║   ██║   ██║██████╔╝██████╔╝██║   ██║		    "${CL_RST}
-	@echo -e ${CL_BLU}"		   	   ██║   ██║   ██║██╔══██╗██╔══██╗██║   ██║		    "${CL_RST}
-	@echo -e ${CL_BLU}"		   	   ██║   ╚██████╔╝██║  ██║██████╔╝╚██████╔╝		    "${CL_RST}
-	@echo -e ${CL_BLU}"		   	   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝		    "${CL_RST}
-	@echo -e ${CL_YLW}"═════════════════════════════════════════════════════════════════════════════════"${CL_RST}
-	@echo -e ${CL_CYN}" Package zip: "${CL_MAG} $(HAZY_TARGET_PACKAGE)"				    "${CL_RST}
-	@echo -e ${CL_YLW}"═════════════════════════════════════════════════════════════════════════════════"${CL_RST}
+	@echo -e ${CL_YLW}"══════════════════════════════════════════════════════════════════════════════"${CL_RST}
+	@echo -e ${CL_CYN}" Package zip: "${CL_MAG} $(HAZY_TARGET_PACKAGE)"				"${CL_RST}
+	@echo -e ${CL_YLW}"══════════════════════════════════════════════════════════════════════════════"${CL_RST}
 
 bootzip: bootimage
 	$(BOOT_ZIP_FROM_IMAGE_SCRIPT) \
